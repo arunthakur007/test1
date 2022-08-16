@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adding Borders and Paddings to HTML Tables</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+{{ obj }}
+    <h2>customer data </h2>
+    <table>
+        <tr>
+            <th>customer_id</th>
+            <th>customer_Name</th>
+
+        </tr>
+        <tr>
+            <td>{{ obj.customer_details.id }}</td>
+            <td>{{ obj.customer_details.name }}</td>
+
+
+    </table>
+
+      <h2>user details</h2>
+    <table>
+        <tr>
+            <th>user_id</th>
+            <th>user_Name</th>
+
+        </tr>
+
+        {% for i in obj.customer_users %}
+        <tr>
+        <td>{{ i.user_id }}</td>
+            <td>{{ i.user_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>
